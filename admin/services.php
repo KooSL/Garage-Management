@@ -79,7 +79,7 @@
                                 <a href="services.php?confirm_id=<?php echo $row3['sid'];?>" class="text-indigo-600 hover:text-indigo-900 mr-2" onclick="return confirm('Are you sure to mark this service as done?')">Done</a>
                             <?php } ?>
                                 <a href="editservice.php?sid=<?php echo $row3['sid'];?>" class="text-indigo-600 hover:text-indigo-900 mr-2">Edit</a>
-                                <a href="vehicles.php?vid=<?php echo $row['vid'];?>" class="text-red-600 hover:text-red-900">Delete</a>
+                                <a href="services.php?delete_id=<?php echo $row3['sid'];?>" class="text-red-600 hover:text-red-900">Delete</a>
                         </td>
                     </tr>
                     <?php } ?>
@@ -93,8 +93,8 @@
     <?php
           if (isset($_GET['delete_id'])) {
             $del_id = $_GET['delete_id'];
-            $qry2 = "DELETE FROM bookings WHERE b_id = '$del_id'";
-            $result = mysqli_query($con, $qry2);
+            $qry2 = "DELETE FROM services WHERE sid = '$del_id'";
+            $result = mysqli_query($conn, $qry2);
           }
           elseif (isset($_GET['confirm_id'])) {
             $confrim_id = $_GET['confirm_id'];
