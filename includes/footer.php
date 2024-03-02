@@ -3,12 +3,15 @@
         <div class="grid grid-cols-3 gap-15 bg-gray-200 mt-80 py-10 px-80">
             <div>
                 <h1 class="text-2xl font-bold">About Us</h1>
-                <p class="text-gray-500">we provide an amazing facilities regarding web site </p>
+                <p class="text-gray-500">A leading garage management system based on online technology</p>
             </div>
 
             <div>
                 <h1 class="text-2xl font-bold">Contact</h1>
-                <p class="text-gray-500">contact us for any kind of queries</p>
+                <p class="text-gray-500">Hamro Garage</p>
+                <p class="text-gray-500">Bharatpur, Chitwan</p>
+                <p class="text-gray-500">info@hamrogarage.com.np</p>
+                <p class="text-gray-500">9812345678</p>
             </div>
         </div>
 

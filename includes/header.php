@@ -12,7 +12,9 @@
         <a href="index.php"><img src="image/garage.png" alt=""></a>
         <div>
             <a href="index.php" class="text-lg font-bold text-white px-5">Home</a>
+            <a href="contact.php" class="text-lg font-bold text-white px-5">Contact</a>
+            <a href="about.php" class="text-lg font-bold text-white px-5">About</a>
             <a href="admin/dashboard.php" class="text-lg font-bold text-white px-5">Dashboard</a>
-            <a href="login.php" class="text-lg font-bold text-white px-5">Login</a>
+            <a href="login.php" class="text-lg font-bold text-white px-5">Admin Login</a>
         </div>
     </nav>
