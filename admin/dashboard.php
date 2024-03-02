@@ -12,6 +12,7 @@
     $qry3= "SELECT * FROM services";
     $qry4 = "SELECT COUNT(*) AS num_completed FROM services WHERE sstatus = 'Done'";
     $qry5 = "SELECT COUNT(*) AS num_inprogress FROM services WHERE sstatus = ''";
+    $qry6= "SELECT * FROM contact";
     // $qry5= "SELECT * FROM contact";
  
     $customers = mysqli_query($conn, $qry1);
@@ -19,6 +20,7 @@
     $services = mysqli_query($conn, $qry3);
     $doneservices = mysqli_query($conn, $qry4);
     $inprogressservices = mysqli_query($conn, $qry5);
+    $contact = mysqli_query($conn, $qry6);
     // $queries = mysqli_query($con, $qry5);
 
     if ($doneservices) {
@@ -40,6 +42,7 @@
     $rows_count_services = mysqli_num_rows($services);
     $rows_count_doneservices = mysqli_num_rows($doneservices);
     $rows_count_inprogressservices = mysqli_num_rows($inprogressservices);
+    $rows_count_contact = mysqli_num_rows($contact);
     // $rows_count_queries = mysqli_num_rows($queries);
 ?>
 
@@ -95,6 +98,12 @@
                 <h2 class="text-lg font-semibold mb-4">In Progress Services</h2>
                 <p class="text-3xl font-bold"><?php echo $numInprogressServices; ?></p>
             </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-lg font-semibold mb-4">Contacts</h2>
+                <p class="text-3xl font-bold"><?php echo $rows_count_contact; ?></p>
+            </div>
+
             <!-- Card 4: Revenue -->
             <!-- <div class="bg-white rounded-lg shadow-md p-6">
                 <h2 class="text-lg font-semibold mb-4">Revenue</h2>

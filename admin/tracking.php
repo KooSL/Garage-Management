@@ -70,13 +70,16 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <?php
                             $sstatus = $row3['sstatus'];
-                             
+                            
+                                echo '<span class="px-2 py-1 rounded ';
+
                                 if($sstatus == "Done"){
-                                    echo '<p class="bg-green-500 pr-10 text-white" name="status" id="status">Done</p>';
+                                echo 'bg-green-500 text-white">Done';
                                 }
                                 elseif($sstatus == ""){
-                                    echo '<p class="bg-yellow-500 text-white" name="status" id="status">In Progress</p>';
+                                echo 'bg-yellow-500 text-white">In Progress';
                                 }
+                                '</span>';
                             ?>
                         </td>
 

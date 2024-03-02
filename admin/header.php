@@ -16,6 +16,7 @@
             <a href="vehicles.php" class="block p-4 hover:bg-gray-300 my-2">Vehicles</a>
             <a href="services.php" class="block p-4 hover:bg-gray-300 my-2">Services</a>
             <a href="tracking.php" class="block p-4 hover:bg-gray-300 my-2">Service Status</a>
+            <a href="contact.php" class="block p-4 hover:bg-gray-300 my-2">Contacts</a>
             <a href="../login.php" class="block p-4 hover:bg-gray-300 my-2" onclick="return confirm('Are you sure to log out?')">logout</a>
         </div>
         </nav>
