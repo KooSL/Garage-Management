@@ -5,10 +5,10 @@
 <div class="w-80 mx-auto my-20">
     <form action="" method="POST">
         <p class="text-white text-2xl font-bold mb-5">Contact Us</p>
-        <input type="text" class="w-full p-2 my-2 border-2 border-gray-300" name="cntname" placeholder="Full Name" required>
-        <input type="email" class="w-full p-2 my-2 border-2 border-gray-300" name="cntemail" placeholder="Email" required>
-        <input type="text" class="w-full p-2 my-2 border-2 border-gray-300" name="cntphone" placeholder="Phone Number">
-        <textarea type="text" class="w-full p-2 my-2 border-2 border-gray-300" name="cntmessage" placeholder="Message" required></textarea>
+        <input type="text" class="w-full p-2 my-2 border-2 border-gray-300 border rounded-md focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300" name="cntname" placeholder="Full Name" required>
+        <input type="email" class="w-full p-2 my-2 border-2 border-gray-300 border rounded-md focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300" name="cntemail" placeholder="Email" required>
+        <input type="text" class="w-full p-2 my-2 border-2 border-gray-300 border rounded-md focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300" name="cntphone" placeholder="Phone Number">
+        <textarea type="text" class="w-full p-2 my-2 border-2 border-gray-300 border rounded-md focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300" name="cntmessage" placeholder="Message" required></textarea>
         <input type="submit" name="submit" class="w-full p-2 my-2 bg-blue-700 text-white font-bold cursor-pointer hover:bg-gray-600" value="Submit">
     </form>
 </div>
