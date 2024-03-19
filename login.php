@@ -1,4 +1,8 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php';
+
+session_start();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,6 +61,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         // $row = mysqli_fetch_assoc($result);
         // header('location: admin/dashboard.php');
+        $_SESSION['loggedin'] = true;
+        $_SESSION['email'] = $email;
         echo '<script type="text/javascript"> alert("Logged In Successfully!"); window.location.assign("admin/dashboard.php"); </script>';
         exit();
     }
