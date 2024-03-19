@@ -21,51 +21,11 @@
 
 
 
-<h1 class="text-3xl font-bold">Add Services</h1>
+<h1 class="text-3xl font-bold">Add Services <span class="text-2xl font-normal">(*Write each services in different line)</span></h1>
     <hr class="my-3 h-1 bg-blue-500">
         <div class="container mx-auto py-8">
         <div class="bg-white shadow-md rounded-lg p-6">
-            <form action="" method="POST">
-                <div class="mb-4">
-                    <!-- <label for="cid" class="block text-sm font-medium text-gray-700">Customer ID</label>
-                    <input type="number" id="cid" name="cid"
-                        class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300" required>
-                    <label for="cname" class="block text-sm font-medium text-gray-700">Owner Name</label>
-                    <select name="cname" id="cname" class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300" required>
-                        <option value="">Select</option>
-                        <?php while($row = mysqli_fetch_assoc($result)){  ?>
-                            <option><?php echo $row['cname'];?> - <?php echo $row['cemail'];?></option>
-                        <?php } ?>
-                        </select>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Vehicle Name</label>
-                    <input type="text" id="name" name="vname"
-                        class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
-                </div>
-                <div class="mb-4">
-                    <label for="brand" class="block text-sm font-medium text-gray-700">Vehicle Brand</label>
-                    <input type="text" id="brand" name="vbrand"
-                        class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
-                </div>
-                <div class="mb-4">
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Vehicle Number</label>
-                    <input type="text" id="phone" name="vnumber"
-                        class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
-                </div> -->
-                <!-- <div class="mb-4">
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Vehicle Number</label>
-                    <input type="text" id="phone" name="phone"
-                        class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
-                </div>
-                <div class="mb-4">
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Vehicle Number</label>
-                    <input type="text" id="phone" name="phone"
-                        class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
-                </div>
-                <div class="mb-4">
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Vehicle Number</label>
-                    <input type="text" id="phone" name="phone"
-                        class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
-                </div> -->
+            <form action="" method="POST">    
                 <div class="mb-4">
                     <label for="vservice" class="block text-sm font-medium text-gray-700">Services</label>
                     <textarea id="vservice" name="sdescription" placeholder="Enter Services Details"

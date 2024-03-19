@@ -1,11 +1,18 @@
 
 
 
-
-
-
 <?php
     include '../includes/dbconnection.php';
+    if(isset($_SESSION['email'])){
+        $email = $_SESSION['email'];
+        $qry = "SELECT * FROM users WHERE email = '$email'";
+        $result = mysqli_query($conn, $qry);
+        $row = mysqli_fetch_assoc($result);
+        $u_name = $row['name'];
+        $uid = $row['uid'];
+        $parts = explode(' ', $u_name);
+        $firstName = $parts[0];
+    }
 
     $qry1= "SELECT * FROM customers";
     $qry2= "SELECT * FROM vehicles";
@@ -48,29 +55,13 @@
 
 
 
+
+
 <?php include 'header.php'; ?>
-            <h1 class="text-3xl font-bold"> Dashboard </h1>
+
+<?php if($email == 'admin@gmail.com'){ ?>
+            <h1 class="text-3xl font-bold">Dashboard </h1>
             <hr class="my-3 h-1 bg-blue-500">
-            <!-- <div class="grid grid-cols-3 gap-10"> -->
-               
-            <!-- <table class="w-full">
-            <tr class="bg-gray-200">
-
-            <div class="bg-blue-500 text-white p-5 shadow rounded">
-                    <h1 class="text-2xl font-bold"> Total Jobs </h1>
-                    <h1 class="text-4xl font-bold">5</h1>
-                </div>
-                
-                <div class="bg-blue-500 text-white p-5 shadow rounded">
-                    <h1 class="text-2xl font-bold">pending service Jobs  </h1>
-                    <h1 class="text-4xl font-bold">5</h1>
-                </div>
-
-                <div class="bg-blue-500 text-white p-5 shadow rounded">
-                    <h1 class="text-2xl font-bold">Total Work Done</h1>
-                    <h1 class="text-4xl font-bold">5</h1>
-                </div> 
-            </div> -->
 
             <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <!-- Card 1: Total Customers -->
@@ -104,24 +95,56 @@
                 <p class="text-3xl font-bold"><?php echo $rows_count_contact; ?></p>
             </div>
 
-            <!-- Card 4: Revenue -->
-            <!-- <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-lg font-semibold mb-4">Revenue</h2>
-                <p class="text-3xl font-bold">$15,000</p>
-            </div> -->
-            <!-- Card 5: Upcoming Appointments -->
-            <!-- <div class="bg-white rounded-lg shadow-md p-6 col-span-2">
-                <h2 class="text-lg font-semibold mb-4">Upcoming Appointments</h2>
-                <ul>
-                    <li class="mb-2">
-                        <span class="font-semibold">John Doe</span> - Oil Change (Feb 15, 2024)
-                    </li>
-                    <li class="mb-2">
-                        <span class="font-semibold">Jane Smith</span> - Brake Repair (Feb 17, 2024)
-                    </li>
-                </ul>
-            </div> -->
         </div>
+
+
+
+        <?php } else { ?>
+
+            <h1 class="text-3xl font-bold">Super Dashboard </h1>
+            <hr class="my-3 h-1 bg-blue-500">
+
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Card 1: Total Customers -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-lg font-semibold mb-4">Total Customers</h2>
+                <p class="text-3xl font-bold"><?php echo $rows_count_customers;?></p>
+            </div>
+            <!-- Card 2: Total Vehicles -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-lg font-semibold mb-4">Total Vehicles</h2>
+                <p class="text-3xl font-bold"><?php echo $rows_count_vehicles;?></p>
+            </div>
+            <!-- Card 3: Total Repairs -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-lg font-semibold mb-4">Total Services</h2>
+                <p class="text-3xl font-bold"><?php echo $rows_count_services;?></p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-lg font-semibold mb-4">Done Services</h2>
+                <p class="text-3xl font-bold"><?php echo $numCompletedServices; ?></p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-lg font-semibold mb-4">In Progress Services</h2>
+                <p class="text-3xl font-bold"><?php echo $numInprogressServices; ?></p>
+            </div>
+
+    
+
+        </div>
+
+
+        <?php } ?>
+
+
+
+
+
+
+
+
 
 <?php include 'footer.php'; ?>
 
