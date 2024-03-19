@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +23,6 @@
             <a href="contact.php" class="text-lg font-bold text-white px-5">Contact</a>
             <a href="about.php" class="text-lg font-bold text-white px-5">About</a>
             <a href="admin/dashboard.php" class="text-lg font-bold text-white px-5">Dashboard</a>
-            <a href="login.php" class="text-lg font-bold text-white px-5">Admin Login</a>
+            <a href="login.php" class="text-lg font-bold text-white px-5">Login</a>
         </div>
     </nav>

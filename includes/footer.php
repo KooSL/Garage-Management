@@ -10,7 +10,7 @@
                 <h1 class="text-2xl font-bold">Contact</h1>
                 <p class="text-gray-500">Hamro Garage</p>
                 <p class="text-gray-500">Bharatpur, Chitwan</p>
-                <p class="text-gray-500">info@hamrogarage.com.np</p>
+                <p class="text-gray-500">info@merogarage.com.np</p>
                 <p class="text-gray-500">9812345678</p>
             </div>
         </div>
