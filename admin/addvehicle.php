@@ -25,7 +25,7 @@
                         <?php while($row = mysqli_fetch_assoc($result)){  ?>
                             <option><?php echo $row['cname'];?> - <?php echo $row['cemail'];?></option>
                         <?php } ?>
-                        </select>
+                        </select><br>
                     <label for="name" class="block text-sm font-medium text-gray-700">Vehicle Name</label>
                     <input type="text" id="name" name="vname"
                         class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
@@ -80,7 +80,10 @@ if(isset($_POST['submit']))
     $vbrand = $_POST['vbrand'];
     $vnumber = $_POST['vnumber'];
 
+    $qry2 = "SELECT * FROM customers WHERE cid = $cid";
+    $result2 = mysqli_query($conn, $qry2);
 
+    if($result2 = TRUE){
         $qry = "INSERT INTO vehicles (cid, cname, vname, vbrand, vnumber) VALUES ('$cid', '$cname', '$vname', '$vbrand', '$vnumber')";
         include '../includes/dbconnection.php';
         if(mysqli_query($conn, $qry))
@@ -93,6 +96,9 @@ if(isset($_POST['submit']))
         {
             echo '<script type="text/javascript"> alert("Something Went Wrong!") </script>';
         }
+    } else {
+        echo '<script type="text/javascript"> alert("Customer ID not found!") </script>';
+    }
 }
 
 ?>

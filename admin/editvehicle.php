@@ -87,7 +87,10 @@ if(isset($_POST['submit']))
     $vbrand = $_POST['vbrand'];
     $vnumber = $_POST['vnumber'];
 
+    $qry3 = "SELECT * FROM customers WHERE cid = $cid";
+    $result3 = mysqli_query($conn, $qry3);
 
+    if($result3 = TRUE){
         $qry = "UPDATE vehicles SET cid = $cid, vname = '$vname', vbrand = '$vbrand', vnumber = '$vnumber' WHERE vid = '$vid'";
         include '../includes/dbconnection.php';
         if(mysqli_query($conn, $qry))
@@ -100,6 +103,9 @@ if(isset($_POST['submit']))
         {
             echo '<script type="text/javascript"> alert("Something Went Wrong!") </script>';
         }
+    } else {
+        echo '<script type="text/javascript"> alert("Customer ID not found!") </script>';
+    }
 }
 
 ?>

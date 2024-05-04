@@ -6,13 +6,13 @@
 
 
 <?php
-    $qry = "SELECT * FROM contact ORDER BY cntid ASC";
+    $qry = "SELECT * FROM feedback ORDER BY cntid ASC";
     include '../includes/dbconnection.php';
     $result = mysqli_query($conn, $qry);
 ?>  
 
 
-<h1 class="text-3xl font-bold">Contacts</h1>
+<h1 class="text-3xl font-bold">Feedbacks</h1>
     <hr class="my-3 h-1 bg-blue-500">
 
         <!-- <div class="mb-4">

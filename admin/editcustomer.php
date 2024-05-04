@@ -16,20 +16,20 @@
     <hr class="my-3 h-1 bg-blue-500">
         <div class="container mx-auto py-8">
         <div class="bg-white shadow-md rounded-lg p-6">
-            <form action="" method="POST">
+            <form action="" method="POST" onsubmit="return validateForm()" name="editcustomers" class="editcustomers">
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                    <input type="text" id="name" name="cname" value="<?php echo $row['cname'];?>"
+                    <input type="text" id="name" name="cname"  required pattern="[a-zA-Z\s]+" title="Only letters and spaces are allowed!"value="<?php echo $row['cname'];?>"
                         class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="email" name="cemail" value="<?php echo $row['cemail'];?>"
+                    <input type="email" id="cemail" name="cemail" value="<?php echo $row['cemail'];?>"
                         class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
                 </div>
                 <div class="mb-4">
                     <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                    <input type="text" id="phone" name="cphone" value="<?php echo $row['cphone'];?>"
+                    <input type="text" id="phone" name="cphone" required maxlength="15" minlength="10" value="<?php echo $row['cphone'];?>"
                         class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
                 </div>
                 <div class="mb-4">
@@ -75,3 +75,16 @@ if(isset($_POST['submit']))
 ?>
 
 
+<script>
+    function validateForm() {
+        var email = document.forms["editcustomers"]["cemail"].value;
+
+        var emailRegex = /^[^\d\s][\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+
+        return true;
+    }
+</script>

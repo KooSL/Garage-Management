@@ -10,21 +10,21 @@
     <hr class="my-3 h-1 bg-blue-500">
         <div class="container mx-auto py-8">
         <div class="bg-white shadow-md rounded-lg p-6">
-            <form action="" method="POST">
+            <form action="" method="POST" onsubmit="return validateForm()" name="addcustomers" class="addcustomers">
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                    <input type="text" id="name" name="cname"
+                    <input type="text" id="name" name="cname" required pattern="[a-zA-Z\s]+" title="Only letters and spaces are allowed!"
                         class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="email" name="cemail"
+                    <input type="email" id="cemail" name="cemail"
                         class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
                 </div>
                 <div class="mb-4">
                     <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                    <input type="text" id="phone" name="cphone"
-                        class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300">
+                    <input type="text" id="phone" name="cphone" required maxlength="15" minlength="10"
+                        class="mt-1 p-2 block w-full rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300" required>
                 </div>
                 <div class="mb-4">
                     <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
@@ -70,3 +70,16 @@ if(isset($_POST['submit']))
 ?>
 
 
+<script>
+    function validateForm() {
+        var email = document.forms["addcustomers"]["cemail"].value;
+
+        var emailRegex = /^[^\d\s][\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+
+        return true;
+    }
+</script>

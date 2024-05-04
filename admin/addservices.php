@@ -21,14 +21,14 @@
 
 
 
-<h1 class="text-3xl font-bold">Add Services <span class="text-2xl font-normal">(*Write each services in different line)</span></h1>
+<h1 class="text-3xl font-bold">Add Services <span class="text-2xl font-normal">(*Write each service in different lines)</span></h1>
     <hr class="my-3 h-1 bg-blue-500">
         <div class="container mx-auto py-8">
         <div class="bg-white shadow-md rounded-lg p-6">
             <form action="" method="POST">    
                 <div class="mb-4">
                     <label for="vservice" class="block text-sm font-medium text-gray-700">Services</label>
-                    <textarea id="vservice" name="sdescription" placeholder="Enter Services Details"
+                    <textarea id="vservice" name="sdescription" placeholder="Enter Service Details"
                         class="mt-1 p-2 block w-full h-80 rounded-md border-gray-300 focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300"><?php echo $sdescription; ?></textarea>
                 </div>
                 <div class="flex justify-end">
